@@ -5,6 +5,7 @@ class UrlController < ApplicationController
     post_data = request.body.read
     url = Url.find_or_create_by_name(post_data)
     url.save
+    render :nothing => true
   end
   
   def new
