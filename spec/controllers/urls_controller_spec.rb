@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe UrlController do
+describe UrlsController do
   render_views
   
   before(:each) do
