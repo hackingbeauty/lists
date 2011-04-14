@@ -1,0 +1,2 @@
+curl -d "http://www.yadayada.comt" http://localhost:3000/submit_url
+
