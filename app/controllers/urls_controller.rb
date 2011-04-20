@@ -8,6 +8,10 @@ class UrlsController < ApplicationController
     render :nothing => true
   end
   
+  def destroy
+  
+  end
+  
   def new
   end
   
@@ -17,9 +21,5 @@ class UrlsController < ApplicationController
   
   def show
   end
-  
-  def destroy
-  end
-  
 
 end

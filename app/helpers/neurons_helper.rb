@@ -1,0 +1,2 @@
+module NeuronsHelper
+end
