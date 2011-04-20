@@ -1,6 +1,8 @@
 %ul
-- @urls.each do |url|
-  %li
-    %a{:href => url.name}
-      = url.name
+  - @urls.each do |url|
+    %li.item
+      %a{:href => url.name}
+        = url.name
+
+#brain
     
