@@ -18,11 +18,13 @@ $greenish:#1ef80e;
 }
 
 .neuron {
-  margin:20px 0;
+  margin:10px 0;
+  padding:10px;
 }
 
 .neuron:hover {
   background:$fluorescent_blue;
+  cursor:pointer;
 }
 
 #hippocampus {

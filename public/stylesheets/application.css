@@ -8,10 +8,12 @@
   margin-right: 20px; }
 
 .neuron {
-  margin: 20px 0; }
+  margin: 10px 0;
+  padding: 10px; }
 
 .neuron:hover {
-  background: #67c7ed; }
+  background: #67c7ed;
+  cursor: pointer; }
 
 #hippocampus {
   float: left;

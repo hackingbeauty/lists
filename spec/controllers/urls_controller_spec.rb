@@ -15,7 +15,7 @@ describe UrlsController do
       end.should change(Url, :count).by(1)
     end
 
-    pending23 "should not create a new url if it already exists" do
+    pending "should not create a new url if it already exists" do
       lambda do
         post :create, :body => @url
       end.should change(Url, :count).by(0)
