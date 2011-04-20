@@ -2,35 +2,35 @@
   
   List = {
     dragDrop: function(){
-      $$('.item').addEvent('mousedown', function(event){
+      $$('.neuron').addEvent('mousedown', function(event){
          event.stop();
-
+         
          // `this` refers to the element with the .item class
-          var shirt = this;
+         var item = this;
 
-         var clone = shirt.clone().setStyles(shirt.getCoordinates()).setStyles({
+         var clone = item.clone().setStyles(item.getCoordinates()).setStyles({
            opacity: 0.7,
            position: 'absolute'
          }).inject(document.body);
 
          var drag = new Drag.Move(clone, {
 
-           droppables: $('brain'),
+           droppables: $('hippocampus'),
 
-           onDrop: function(dragging, cart){
+           onDrop: function(dragging, hippocampus){
 
              dragging.destroy();
 
-             if (cart != null){
-               shirt.clone().inject(cart);
-               cart.highlight('#7389AE', '#FFF');
+             if (hippocampus != null){
+               item.clone().inject(hippocampus);
+               hippocampus.highlight('#1ef80e', '#FFF');
              }
            },
-           onEnter: function(dragging, cart){
-             cart.tween('background-color', '#98B5C1');
+           onEnter: function(dragging, hippocampus){
+             hippocampus.tween('background-color', '#1ef80e');
            },
-           onLeave: function(dragging, cart){
-             cart.tween('background-color', '#FFF');
+           onLeave: function(dragging, hippocampus){
+             hippocampus.tween('background-color', '#FFF');
            },
            onCancel: function(dragging){
              dragging.destroy();

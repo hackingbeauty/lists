@@ -1,4 +1,20 @@
-#brain {
+/* Color Scheme */
+#main {
+  padding: 20px; }
+
+#list {
+  float: left;
+  border: 1px solid blue;
+  margin-right: 20px; }
+
+.neuron {
+  margin: 20px 0; }
+
+.neuron:hover {
+  background: #67c7ed; }
+
+#hippocampus {
+  float: left;
   border: 1px solid pink;
   width: 500px;
   height: 500px; }

@@ -1,4 +1,32 @@
-#brain {
+/* Color Scheme */
+$light_pink:#ffb9aa;
+$hot_pink:#f3439b;
+$turquose:#80d9e9;
+$fluorescent_blue:#67c7ed;
+$purplish:#6860b2;
+$yellowish:#ffd00a;
+$greenish:#1ef80e;
+
+#main {
+  padding:20px;
+}
+
+#list {
+  float:left;
+  border:1px solid blue;
+  margin-right:20px;
+}
+
+.neuron {
+  margin:20px 0;
+}
+
+.neuron:hover {
+  background:$fluorescent_blue;
+}
+
+#hippocampus {
+  float:left;
   border:1px solid pink;
   width:500px;
   height:500px;

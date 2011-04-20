@@ -2,8 +2,9 @@
 %html
   %head
     %title Lists
-    = stylesheet_link_tag :all
+    = stylesheet_link_tag "reset-min.css", "application.css"
     = csrf_meta_tag
   %body
-    = yield
+    #main
+      = yield
     = javascript_include_tag 'mootool-yui-compressed.js', 'mootool-drag-drop-min.js', 'application.js'
