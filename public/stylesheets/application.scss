@@ -1,11 +1,37 @@
 /* Color Scheme */
-$light_pink:#ffb9aa;
+/*$light_pink:#ffb9aa;
 $hot_pink:#f3439b;
 $turquose:#80d9e9;
 $fluorescent_blue:#67c7ed;
 $purplish:#6860b2;
 $yellowish:#ffd00a;
-$greenish:#1ef80e;
+$greenish:#1ef80e;*/
+$darker_blue:  #0071a8;
+$lighter_blue: #00a4de;
+$black: #070707;
+$white:#fdfbfb;
+
+/* Mixins */
+
+@mixin rounded_corners {
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+}
+
+@mixin shadow {
+  -moz-box-shadow: 1px 2px 20px rgba(0,0,0,0.5);
+  -webkit-box-shadow: 1px 2px 20px rgba(0,0,0,0.5);
+  border-bottom: 1px solid rgba(0,0,0,0.25);
+}
+
+
+/* */
+
+body {
+  background:$black;
+  font-family:Arial,Helvetica,san-serif;
+  font-size:12px;
+}
 
 #main {
   padding:20px;
@@ -18,12 +44,33 @@ $greenish:#1ef80e;
 }
 
 .neuron {
+  @include rounded_corners;
+  @include shadow;
+  background: -webkit-gradient(linear, 0 0, 0 100%, from($darker_blue), to($lighter_blue));
+  background: -moz-linear-gradient(top, $darker_blue, $lighter_blue);
+  border:1px solid $lighter_blue;
   margin:10px 0;
   padding:10px;
+  height:60px;
+  width:400px;
+  color:$white;
+}
+
+.neuron a {
+  color:inherit;
+  display:block;
+  font-size:150%;
+  position:relative;
+  top:38%;
+  text-overflow: ellipsis;
+  border: 1px solid #000000;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .neuron:hover {
-  background:$fluorescent_blue;
+  background:red;
   cursor:pointer;
 }
 

@@ -1,4 +1,18 @@
 /* Color Scheme */
+/*$light_pink:#ffb9aa;
+$hot_pink:#f3439b;
+$turquose:#80d9e9;
+$fluorescent_blue:#67c7ed;
+$purplish:#6860b2;
+$yellowish:#ffd00a;
+$greenish:#1ef80e;*/
+/* Mixins */
+/* */
+body {
+  background: #070707;
+  font-family: Arial,Helvetica,san-serif;
+  font-size: 12px; }
+
 #main {
   padding: 20px; }
 
@@ -8,11 +22,34 @@
   margin-right: 20px; }
 
 .neuron {
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-box-shadow: 1px 2px 20px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 1px 2px 20px rgba(0, 0, 0, 0.5);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+  background: -webkit-gradient(linear, 0 0, 0 100%, from(#0071a8), to(#00a4de));
+  background: -moz-linear-gradient(top, #0071a8, #00a4de);
+  border: 1px solid #00a4de;
   margin: 10px 0;
-  padding: 10px; }
+  padding: 10px;
+  height: 60px;
+  width: 400px;
+  color: #fdfbfb; }
+
+.neuron a {
+  color: inherit;
+  display: block;
+  font-size: 150%;
+  position: relative;
+  top: 38%;
+  text-overflow: ellipsis;
+  border: 1px solid #000000;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis; }
 
 .neuron:hover {
-  background: #67c7ed;
+  background: red;
   cursor: pointer; }
 
 #hippocampus {
