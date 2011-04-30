@@ -1,0 +1,5 @@
+<%for(var i = 0; i < neurons.length ; i++){%>
+	<tr <%= neurons[i]%>>
+		<%= $.View('//brain/views/neuron/show',neurons[i])%>
+	</tr>
+<%}%>
