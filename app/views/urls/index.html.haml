@@ -1,0 +1,11 @@
+%ul#list
+  %h2
+    To Do List:
+  - @urls.each do |url|
+    %li.neuron
+      %a{:href => url.name}
+        = url.name
+#hippocampus
+  %h2
+    File Away Into Your Hippocampus:
+    

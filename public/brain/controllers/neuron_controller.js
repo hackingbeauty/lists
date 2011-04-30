@@ -85,6 +85,8 @@ show: function( neuron ){
  *	 Handle's clicking on a neuron's destroy link.
  */
 '.destroy click': function( el ){
+  var id = el.closest('.neuron').model().url.id;
+  console.log(el.closest('.neuron').model().url.id);
 	if(confirm("Are you sure you want to destroy?")){
 		el.closest('.neuron').model().destroy();
 	}

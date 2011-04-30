@@ -17,13 +17,14 @@ $.Model('Brain.Models.Neuron',
  	 */
 	findAll: function( params, success, error ){
 		$.ajax({
-			url: '/neuron',
+			url: '/urls',
 			type: 'get',
 			dataType: 'json',
 			data: params,
 			success: this.callback(['wrapMany',success]),
-			error: error,
-			fixture: "//brain/fixtures/neurons.json.get" //calculates the fixture path from the url and type.
+			error: function(){
+			  alert(error);
+			}		
 		});
 	},
 	/**
@@ -51,14 +52,15 @@ $.Model('Brain.Models.Neuron',
  	 * @param {Function} error a callback that should be called with an object of errors.
 	 */
 	destroy: function( id, success, error ){
+	  id = 7
+    console.log("inside destroy in neuron.js and id is " + id);
+    console.log(arguments);
 		$.ajax({
-			url: '/neurons/'+id,
+			url: '/urls/'+id,
 			type: 'delete',
 			dataType: 'json',
 			success: success,
-			error: error,
-			fixture: "-restDestroy" // uses $.fixture.restDestroy for response.
-		});
+			error: error		});
 	},
 	/**
 	 * Creates a neuron.
@@ -78,5 +80,8 @@ $.Model('Brain.Models.Neuron',
 		});
 	}
 },
+
+
+
 /* @Prototype */
 {});

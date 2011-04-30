@@ -9,7 +9,11 @@ class UrlsController < ApplicationController
   end
   
   def destroy
-  
+    puts "========"
+    puts "inside destroy"
+    Url.find(params[:id]).destroy
+    puts "destroyed"
+    render :nothing => true
   end
   
   def new
@@ -17,9 +21,18 @@ class UrlsController < ApplicationController
   
   def index
     @urls = Url.find(:all)
+    # render :json => @urls
+    respond_to do |type|
+      type.html
+      type.js {render :json => @urls}
+    end
   end
   
   def show
+    @the_url = Url.find(params[:id])
+    puts "======"
+    puts @the_url.name
+    puts @the_url.id
   end
 
 end
