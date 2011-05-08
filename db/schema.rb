@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(:version => 20110420193452) do
   end
 
   create_table "urls", :force => true do |t|
-    t.binary   "name"
+    t.string   "name"
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
