@@ -28,19 +28,29 @@ $white:#fdfbfb;
 /* */
 
 body {
-/*  background:$black;*/
   font-family:Arial,Helvetica,san-serif;
   font-size:12px;
 }
 
 #main {
-  padding:20px;
+  float:left;
+  width:100%;
+}
+
+#wrapper {
+  padding:10px;
+}
+
+header {
+  border:3px solid green;
+  height:50px;
 }
 
 #list {
   float:left;
-  border:1px solid blue;
+  border:4px solid blue;
   margin-right:20px;
+  width:26%;
 }
 
 .neuron {
@@ -48,11 +58,9 @@ body {
   @include shadow;
   background: -webkit-gradient(linear, 0 0, 0 100%, from($darker_blue), to($lighter_blue));
   background: -moz-linear-gradient(top, $darker_blue, $lighter_blue);
-  border:1px solid $lighter_blue;
   margin:10px 0;
   padding:10px;
   height:60px;
-  width:400px;
   color:$white;
 }
 
@@ -63,7 +71,6 @@ body {
   position:relative;
   top:38%;
   text-overflow: ellipsis;
-  border: 1px solid #000000;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -75,8 +82,8 @@ body {
 }
 
 #hippocampus {
-  float:left;
-  border:1px solid pink;
-  width:500px;
+  float:right;
+  border:3px solid green;
   height:500px;
+  width:70%;
 }
