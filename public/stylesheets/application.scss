@@ -53,7 +53,7 @@ header {
   width:26%;
 }
 
-.neuron {
+/*.neuron {
   @include rounded_corners;
   @include shadow;
   background: -webkit-gradient(linear, 0 0, 0 100%, from($darker_blue), to($lighter_blue));
@@ -79,7 +79,7 @@ header {
 .neuron:hover {
   background:red;
   cursor:pointer;
-}
+}*/
 
 #hippocampus {
   float:right;
