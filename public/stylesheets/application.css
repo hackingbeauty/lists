@@ -29,35 +29,36 @@ header {
   margin-right: 20px;
   width: 26%; }
 
-/*.neuron {
-  @include rounded_corners;
-  @include shadow;
-  background: -webkit-gradient(linear, 0 0, 0 100%, from($darker_blue), to($lighter_blue));
-  background: -moz-linear-gradient(top, $darker_blue, $lighter_blue);
-  margin:10px 0;
-  padding:10px;
-  height:60px;
-  color:$white;
-}
-
 .neuron a {
-  color:inherit;
-  display:block;
-  font-size:150%;
-  position:relative;
-  top:38%;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
+  border: 3px solid black;
+  display: block;
+  cursor: move;
+  background: grey;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  margin: 10px 0;
+  padding: 10px;
+  height: 10px;
+  color: #fdfbfb; }
 
-.neuron:hover {
-  background:red;
-  cursor:pointer;
-}*/
+.neuron a:hover {
+  border: 3px solid blue;
+  display: block;
+  cursor: move;
+  background: red;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  margin: 10px 0;
+  padding: 10px;
+  height: 10px;
+  color: #fdfbfb; }
+
+.opaque {
+  opacity: 0.4; }
+
 #hippocampus {
   float: right;
   border: 3px solid green;
+  background: grey;
   height: 500px;
   width: 70%; }

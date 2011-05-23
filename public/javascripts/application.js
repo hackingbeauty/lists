@@ -1,20 +1,32 @@
 (function(){
   
-  List = {
+  BrainList = {
+    dragOverDiv: $('#hippocampus'),
     init:function(){
-      // List.neuronSelection();
-      List.dragDrop();
+      BrainList.dragDrop();
     },
     dragDrop: function(){
+      if (Modernizr.draganddrop) {
+        $('#list').delegate('a', 'dragstart',  function(){ $(this).toggleClass('opaque')   });
+        $('#list').delegate('a', 'dragenter',  function(event){ BrainList.dragEnter(event) });
+        $('#hippocampus').bind('dragover', function(eventObj){ BrainList.dragOver(event)  });
+        $('#list').delegate('a', 'dragleave',  function(event){ BrainList.dragOver(event)  });
+      } else {
+        // Fallback to a library solution.
+      }
+    },
+    dragEnter: function(event){
+      $(BrainList.dragOverDiv).toggleClass('opaque');
+    },
+    dragOver: function(eventObj){
 
     },
-    neuronSelection:function(){
-      // $('.neuron').click(function() {
-      //   alert('Handler for .click() called.');
-      // });
+    dragLeave: function(event){
+      $(BrainList.dragOverDiv).toggleClass('opaque');
+      console.log("dragLeave is " + event);
     }
   }
-  
-  List.init();
+    
+  BrainList.init();
   
 })();

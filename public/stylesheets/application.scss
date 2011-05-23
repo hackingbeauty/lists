@@ -53,37 +53,39 @@ header {
   width:26%;
 }
 
-/*.neuron {
+.neuron a{
+  border:3px solid black;
+  
+  display:block;
+  cursor: move;
+  background:grey;
   @include rounded_corners;
-  @include shadow;
-  background: -webkit-gradient(linear, 0 0, 0 100%, from($darker_blue), to($lighter_blue));
-  background: -moz-linear-gradient(top, $darker_blue, $lighter_blue);
   margin:10px 0;
   padding:10px;
-  height:60px;
+  height:10px;
   color:$white;
 }
 
-.neuron a {
-  color:inherit;
+.neuron a:hover {
+  border:3px solid blue;
   display:block;
-  font-size:150%;
-  position:relative;
-  top:38%;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  cursor: move;
+  background:red;
+  @include rounded_corners;
+  margin:10px 0;
+  padding:10px;
+  height:10px;
+  color:$white;
 }
 
-.neuron:hover {
-  background:red;
-  cursor:pointer;
-}*/
+.opaque {
+  opacity: 0.4;
+}
 
 #hippocampus {
   float:right;
   border:3px solid green;
+  background:grey;
   height:500px;
   width:70%;
 }

@@ -2,7 +2,7 @@
   %h2
     To Do List:
   - @urls.each do |url|
-    %li.neuron
+    %li.neuron{:draggable => "true"}
       %a{:href => url.name}
         = url.name
 #hippocampus
