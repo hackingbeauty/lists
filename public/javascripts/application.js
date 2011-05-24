@@ -3,22 +3,35 @@
   BrainList = {
     init:function(){
       if (Modernizr.draganddrop) {
-        $('#list').delegate('a', 'dragstart',  function(){ BrainList.handleDragStart(this) });
+        var list = $('#url-list');
         var dragOverArea = $('#hippocampus');
-        $(dragOverArea).bind('dragover',  function(){ BrainList.handleDragOver(this) });
+        $(list).delegate('a', 'dragstart',  function(){ BrainList.handleDragStart(event,this) });
+        $(dragOverArea).bind('dragover',  function(){ BrainList.handleDragOver(event,this) });
+        $(dragOverArea).bind('drop',  function(){ BrainList.handleDrop(event,this) });
         $(dragOverArea).bind('dragleave',  function(){ BrainList.handleDragLeave(this) });    
       } else {
         // Fallback to a library solution.
       }
     },
-    handleDragStart:function(elem){
+    handleDragStart:function(event,elem){
+      event.dataTransfer.effectAllowed = 'move';
+      event.dataTransfer.setData('text/html', elem.innerHTML);
       $(elem).addClass('opaque');
     },
-    handleDragOver:function(elem){
+    handleDragOver:function(event,elem){
+      if (event.preventDefault) {
+           event.preventDefault(); // Necessary. Allows us to drop.
+       }
       $(elem).addClass('over');
+      return false;      
     },
     handleDragLeave:function(elem){
       $(elem).removeClass('over');
+    },
+    handleDrop:function(event,elem){
+      event.dataTransfer.dropEffect = 'move';
+      var data = event.dataTransfer.getData('text/html');
+      $('#hippocampus-list').append('<li>' + data + '</li>');
     }
   }
   
