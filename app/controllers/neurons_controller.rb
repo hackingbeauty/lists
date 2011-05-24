@@ -5,6 +5,8 @@ class NeuronsController < ApplicationController
     @neuron.url = params[:data]
     respond_to do |type|
       if @neuron.save
+        url = Url.find_or_create_by_name(@neuron.url)
+        url.delete
         type.js { render :text => "yayay" }
         # type.js { render :json => jsonObj } // if you use this, must specify dataType in ajax call to be "json"
       else

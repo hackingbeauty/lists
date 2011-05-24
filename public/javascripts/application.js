@@ -1,6 +1,8 @@
 (function(){
   
   BrainList = {
+    source:"",
+    target:"",
     init:function(){
       if (Modernizr.draganddrop) {
         var list = $('#url-list');
@@ -10,10 +12,11 @@
         $(dragOverArea).bind('drop',  function(){ BrainList.handleDrop(event,this) });
         $(dragOverArea).bind('dragleave',  function(){ BrainList.handleDragLeave(this) });    
       } else {
-        // Fallback to a library solution.
+        alert("You're not using an HTML5 compatible browswer.")// Fallback to a library solution.
       }
     },
     handleDragStart:function(event,elem){
+      BrainList.source = elem;
       event.dataTransfer.effectAllowed = 'move';
       event.dataTransfer.setData('text/plain', $.trim(elem.innerHTML));
       $(elem).addClass('opaque');
@@ -33,6 +36,7 @@
       var data = event.dataTransfer.getData('text/plain');
       $('#hippocampus-list').append('<li>' + data + '</li>');
       $(elem).removeClass('over');
+      $(BrainList.source).remove();
       BrainList.sendDataToBrain(data);
     },
     sendDataToBrain:function(data){
