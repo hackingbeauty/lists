@@ -9,4 +9,7 @@
   %h2
     File Away Into Your Hippocampus:
   %ul#hippocampus-list
+    - @neurons.each do |neuron|
+      %li
+        = neuron.url
     

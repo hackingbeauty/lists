@@ -15,7 +15,7 @@
     },
     handleDragStart:function(event,elem){
       event.dataTransfer.effectAllowed = 'move';
-      event.dataTransfer.setData('text/html', elem.innerHTML);
+      event.dataTransfer.setData('text/plain', $.trim(elem.innerHTML));
       $(elem).addClass('opaque');
     },
     handleDragOver:function(event,elem){
@@ -30,12 +30,32 @@
     },
     handleDrop:function(event,elem){
       event.dataTransfer.dropEffect = 'move';
-      var data = event.dataTransfer.getData('text/html');
+      var data = event.dataTransfer.getData('text/plain');
       $('#hippocampus-list').append('<li>' + data + '</li>');
+      $(elem).removeClass('over');
+      BrainList.sendDataToBrain(data);
+    },
+    sendDataToBrain:function(data){
+      json = {
+        "data":data
+      };
+      console.log('data is ' + data);
+      $.ajax({
+        type: 'post',
+        url: '/neurons',
+        data: json,
+        dataType: 'text',
+        error: function(res) { 
+          console.log('error')
+          console.log(res.responseText)
+        },
+        success: function(res){
+          console.log('success')
+          console.log(res);
+        }
+      });
     }
   }
-  
-
   
   // BrainList = {
   //   dragOverDiv: $('#hippocampus'),
