@@ -1,0 +1,13 @@
+sandbox:
+  username: synesthesia
+  password: 0rangutan78!
+  consumer_key: synesthesiax
+  consumer_secret: 3a45edd22990b97a
+  url: https://sandbox.evernote.com/edam/user
+
+production:
+  username: user
+  password: password
+  consumer_key: key
+  consumer_secret: secret
+  url: https://sandbox.evernote.com/edam/user
