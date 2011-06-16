@@ -99,7 +99,7 @@ PLATFORMS
 
 DEPENDENCIES
   annotate-models (= 1.0.4)
-  evernote
+  evernote (~> 0.9.0)
   factory_girl_rails (= 1.0)
   haml
   rails (= 3.0.3)
