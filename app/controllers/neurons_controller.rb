@@ -1,3 +1,5 @@
+require 'evernote'
+
 class NeuronsController < ApplicationController
   
   def create
@@ -6,23 +8,23 @@ class NeuronsController < ApplicationController
     respond_to do |type|
       if @neuron.save
         url = Url.find_or_create_by_name(@neuron.url)
-        url.delete
-        type.js { render :text => "yayay" }
-        # type.js { render :json => jsonObj } // if you use this, must specify dataType in ajax call to be "json"
+        url.delete #delete the url after you've created a neuron
+        type.js { render :text => "successfully registered neuron" }
       else
         type.js { render :text => "Error saving neuron", :status => :unprocessable_entity } 
-        # type.js { render :json => @neuron.errors.full_messages, :status => :unprocessable_entity }        
       end
     end
   end
   
   def index
+    @neurons = Neuron.find(:all)
   end
   
   def destroy
   end
   
   def show
+    
   end  
   
 end
