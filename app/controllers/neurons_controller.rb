@@ -23,7 +23,7 @@ class NeuronsController < ApplicationController
   end
 
   def index
-    @neurons = Neuron.find(:all)
+    
   end
   
   def destroy

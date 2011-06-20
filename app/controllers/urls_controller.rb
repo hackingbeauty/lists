@@ -20,12 +20,12 @@ class UrlsController < ApplicationController
   end
   
   def index
-    @urls = Url.find(:all)
-    @neurons = Neuron.find(:all)
-    respond_to do |type|
-      type.html
-      type.js {render :json => @urls}
-    end
+#    @urls = Url.find(:all)
+#    @neurons = Neuron.find(:all)
+#    respond_to do |type|
+#      type.html
+#      type.js {render :json => @urls}
+#    end
   end
   
   def show
