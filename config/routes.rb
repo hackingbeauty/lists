@@ -1,4 +1,6 @@
 Lists::Application.routes.draw do
+  get "dashboard/index"
+
   resources :urls
   resources :neurons
 
