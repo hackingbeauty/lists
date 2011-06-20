@@ -13,13 +13,22 @@ class NeuronsController < ApplicationController
                       '<en-note>'+ neuron +'<br/>' +
                       '</en-note>'
        
-      @noteStore.createNote(@authToken,note)
-      puts "neuron successfully stored"
+      newNote = @noteStore.createNote(@authToken,note)
+     
+      respond_to do |type|
+        if newNote
+          url = Url.find_by_name(neuron)
+          url.delete
+          type.js { render :text => "successfully registered neuron" }
+        else
+          type.js { render :text => "Error saving neuron", :status => :unprocessable_entity }      
+        end
+      end
+  
     rescue Evernote::EDAM::Error::EDAMErrorCode => e
-     puts "Evernote error: #{e.message}"
+      puts "Evernote error: #{e.message}"
     end
 
-    render :nothing => true
   end
 
   def index
