@@ -1,2 +1,14 @@
-<h1>Dashboard#index</h1>
-<p>Find me in app/views/dashboard/index.html.erb</p>
+%ul#url-list
+  %h2
+    To Do List:
+  - @urls.each do |url|
+    %li.neuron{:draggable => "true"}
+      %a{:href => url.name}
+        = url.name
+#hippocampus
+  %h2
+    File Away Into Your Hippocampus:
+  %ul#hippocampus-list
+    - @neurons.each do |neuron|
+      %li
+        = neuron.url
